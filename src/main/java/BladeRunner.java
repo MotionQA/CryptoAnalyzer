@@ -1,5 +1,8 @@
+import entity.Result;
+
 public class BladeRunner {
     public static void main(String[] args) {
-        System.out.println("Hello maven");
+        Application application = new Application(args);
+        Result result = Application.run ();
     }
 }
