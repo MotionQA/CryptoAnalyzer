@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Application {
 
-    private final MainController mainController;
+    private static MainController mainController = null;
 
     public Application() {
         mainController = new MainController();
