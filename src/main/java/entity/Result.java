@@ -1,4 +1,6 @@
 package entity;
 
-public class Result {
+public interface Result {
+
+
 }
