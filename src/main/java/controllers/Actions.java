@@ -11,22 +11,20 @@ public enum Actions {
 
     private final Action action;
 
-    Actions (Action action){
+    Actions(Action action) {
         this.action = action;
     }
 
-    public static Action find(String actionName){
-       // try {
+    public static Action find(String actionName) {
+        if (actionName == null) {
+            throw new AppException("Action name cannot be null");
+        }
 
-
+        try {
             Actions value = Actions.valueOf(actionName.toUpperCase());
             return value.action;
-           // Object value = null;
-         //   return null;
-       // }catch (IllegalArgumentException e){
-         //  throw new AppException();
-       // }
-
+        } catch (IllegalArgumentException e) {
+            throw new AppException("Invalid action: " + actionName, e);
+        }
     }
-
 }
